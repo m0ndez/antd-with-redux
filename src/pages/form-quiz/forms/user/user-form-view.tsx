@@ -218,7 +218,6 @@ export const UserFormView: FC = () => {
             name="passportNumber"
             render={({ field }) => (
               <TextInput
-                required
                 label={t("form.passport_number.label")}
                 placeholder={t("form.passport_number.placeholder")}
                 {...field}
@@ -236,7 +235,7 @@ export const UserFormView: FC = () => {
               fieldState: { invalid, error },
             }) => (
               <NumericFormat
-                {...field}
+                required
                 getInputRef={ref}
                 label={t("form.expected_salary.label")}
                 customInput={TextInput}
@@ -252,6 +251,7 @@ export const UserFormView: FC = () => {
                     ""
                   ) as string
                 }
+                {...field}
               />
             )}
           />

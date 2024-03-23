@@ -20,7 +20,7 @@ export const SelectInput = forwardRef<RefSelectProps, Props>((props, ref) => {
           {label}:
         </label>
       )}
-      <Select ref={ref} {...otherProps} id={elementId} />
+      <Select ref={ref} showSearch {...otherProps} id={elementId} />
       {isError && <div className="error-message">{errorMessage}</div>}
     </div>
   );

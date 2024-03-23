@@ -3,6 +3,7 @@
 ### Setup
 ```sh
 git clone https://github.com/m0ndez/antd-with-redux.git &&
-cd ./antd-with-redux
-yarn && dev
+cd ./antd-with-redux &&
+yarn &&
+yarn dev
 ```

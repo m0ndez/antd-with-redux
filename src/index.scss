@@ -1,0 +1,35 @@
+$foreground-rgb: 0, 0, 0;
+$background-start-rgb: 110, 218, 120;
+$background-end-rgb: 255, 162, 0;
+$gray-rgb: 128, 128, 128;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --foreground-rgb: #{$foreground-rgb};
+  --background-start-rgb: #{$background-start-rgb};
+  --background-end-rgb: #{$background-end-rgb};
+  --gray-rgb: #{$gray-rgb};
+}
+
+body {
+  margin: 0;
+  display: block;
+  box-sizing: border-box;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    90deg,
+    rgb(var(--background-start-rgb)) 0%,
+    rgb(var(--background-end-rgb)) 100%
+  );
+}

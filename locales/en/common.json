@@ -1,0 +1,119 @@
+{
+  "hello": "Hello",
+
+  "language_options": {
+    "en": "English",
+    "th": "Thai"
+  },
+
+  "quiz_options": {
+    "1": {
+      "title": "Test 1",
+      "description": "Layout & Style"
+    },
+    "2": {
+      "title": "Test 2",
+      "description": "Form & Table"
+    }
+  },
+
+  "form": {
+    "name_prefix": {
+      "label": "Name Prefix",
+      "placeholder": "Select Name Prefix",
+      "options": {
+        "mr": "Mr.",
+        "mrs": "Mrs.",
+        "miss": "Miss"
+      },
+      "errors": {
+        "required": "Please select name prefix"
+      }
+    },
+    "first_name": {
+      "label": "First Name",
+      "placeholder": "Enter First Name",
+      "errors": {
+        "required": "Please enter first name"
+      }
+    },
+    "last_name": {
+      "label": "Last Name",
+      "placeholder": "Enter Last Name",
+      "errors": {
+        "required": "Please enter last name"
+      }
+    },
+    "dob": {
+      "label": "Date of Birth",
+      "placeholder": "month/day/year",
+      "errors": {
+        "required": "Please enter date of birth"
+      }
+    },
+    "nationality": {
+      "label": "National",
+      "placeholder": "Select National",
+      "errors": {
+        "required": "Please select nationality"
+      }
+    },
+    "citizen_id": {
+      "label": "Citizen ID",
+      "placeholder": "Enter Citizen ID",
+      "errors": {
+        "required": "Please enter citizen ID"
+      }
+    },
+    "sex": {
+      "label": "Sex",
+      "options": {
+        "male": "Male",
+        "female": "Female",
+        "other": "Other"
+      },
+      "errors": {
+        "required": "Please select sex"
+      }
+    },
+    "mobile": {
+      "label": "Mobile",
+      "placeholder": "Enter Mobile",
+      "errors": {
+        "required": "Please enter mobile"
+      }
+    },
+    "passport_number": {
+      "label": "Passport",
+      "placeholder": "Enter Passport"
+    },
+    "expected_salary": {
+      "label": "Expected Salary",
+      "placeholder": "Enter Expected Salary",
+      "errors": {
+        "required": "Please enter expected salary"
+      }
+    }
+  },
+  "selected_total_items": "Selected {{total}} items",
+  "total_items": "{{total}} items",
+
+  "feedback": {
+    "success": "Success",
+    "edit": "Edit success",
+    "delete": "Delete success",
+    "error": "Error"
+  },
+
+  "action": {
+    "go_back": "Main menu",
+    "move_shape": "Move shape",
+    "move_position": "Move position",
+    "manage": "Manage",
+    "delete": "Delete",
+    "all": "All",
+    "edit": "Edit",
+    "submit": "Submit",
+    "clear": "Clear"
+  }
+}

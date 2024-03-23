@@ -33,12 +33,11 @@ export const UserFormProvider: FC<Props> = (props) => {
     if (formData.key) {
       dispatch(editUser(formData));
       messageApi.success(t("feedback.edit"));
-      return;
     } else {
       dispatch(addUser({ ...formData, key }));
       messageApi.success(t("feedback.success"));
     }
-    methods.reset({ ...defaultValues });
+    return methods.reset({ ...defaultValues });
   };
 
   return (

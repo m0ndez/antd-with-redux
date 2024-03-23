@@ -1,33 +1,21 @@
 import { z } from "zod";
 
+const requiredString = z.string().min(1, {
+  message: "required",
+});
+
 export const userFormSchema = z.object({
-  key: z.string(),
-  namePrefix: z.string().min(1, {
+  key: requiredString,
+  namePrefix: requiredString,
+  firstName: requiredString,
+  lastName: requiredString,
+  dob: requiredString,
+  nationality: requiredString,
+  citizenId: requiredString.min(13, {
     message: "required",
   }),
-  firstName: z.string().min(1, {
-    message: "required",
-  }),
-  lastName: z.string().min(1, {
-    message: "required",
-  }),
-  dob: z.string().min(1, {
-    message: "required",
-  }),
-  nationality: z.string().min(1, {
-    message: "required",
-  }),
-  citizenId: z.string().min(13, {
-    message: "required",
-  }),
-  sex: z.string().min(1, {
-    message: "required",
-  }),
-  phoneNumber: z
-    .string()
-    .min(1, {
-      message: "required",
-    })
+  sex: requiredString,
+  phoneNumber: requiredString
     .refine(
       (value) =>
         (value.startsWith("0") && value.length === 10) ||
@@ -35,12 +23,9 @@ export const userFormSchema = z.object({
       {
         message: "required",
       }
-    ),
-  countryCode: z.string().min(1, {
-    message: "required",
-  }),
+    )
+    .transform((value) => (value.startsWith("0") ? value.substring(1) : value)),
+  countryCode: requiredString,
   passportNumber: z.string().optional(),
-  expectedSalary: z.string().min(1, {
-    message: "required",
-  }),
+  expectedSalary: requiredString,
 });

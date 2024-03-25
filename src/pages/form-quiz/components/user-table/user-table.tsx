@@ -1,11 +1,14 @@
 import { FC, Key, useState } from "react";
 import { useLocale } from "../../../../hooks";
 import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
-import { removeUser, selectUsers } from "../../../../redux/slices/user-slice";
-import { useFormContext } from "react-hook-form";
+import {
+  clearUser,
+  removeUserById,
+  selectUsers,
+} from "../../../../redux/slices/user-slice";
 import { TableRowSelection } from "antd/es/table/interface";
 import { UserData } from "../../../../types";
-import { Button, Flex, Table, message } from "antd";
+import { Button, Flex, Form, Table, message } from "antd";
 import { columns } from "./columns";
 
 export const UserTable: FC = () => {
@@ -18,7 +21,10 @@ export const UserTable: FC = () => {
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<Key[]>([]);
 
-  const { reset } = useFormContext<UserData>();
+  // TODO: Old code React Hook Form
+  // const { reset } = useFormContext<UserData>();
+
+  const form = Form.useFormInstance<UserData>();
 
   const onSelectChange: (typeof rowSelection)["onChange"] = (
     newSelectedRowKeys
@@ -32,14 +38,19 @@ export const UserTable: FC = () => {
   };
 
   const handleAction = (type: "EDIT" | "DELETE", record: UserData) => {
+    console.log("🚀 ~ handleAction ~ record:", record);
     if (type === "EDIT") {
-      reset({ ...record });
+      form.setFieldsValue({
+        ...record,
+      });
+      // TODO: Old code React Hook Form
+      // reset({ ...record });
       return;
     }
 
     if (type === "DELETE") {
       messageApi.success(t("feedback.delete"));
-      return dispatch(removeUser({ key: record.key }));
+      return dispatch(removeUserById({ key: record.key }));
     }
   };
 
@@ -49,7 +60,13 @@ export const UserTable: FC = () => {
         {t("selected_total_items", { total: selectedRowKeys?.length })}
 
         {!!selectedRowKeys?.length && (
-          <Button>
+          <Button
+            onClick={() => {
+              dispatch(clearUser());
+              setSelectedRowKeys([]);
+              messageApi.success(t("feedback.delete_all_user"));
+            }}
+          >
             {t("action.delete")}
             {t("action.all")}
           </Button>
@@ -65,6 +82,7 @@ export const UserTable: FC = () => {
           showTotal: (total) => t("total_items", { total }),
         }}
         dataSource={userList.data}
+        className="pb-4"
       />
       {contextHolder}
     </Flex>

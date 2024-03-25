@@ -7,15 +7,18 @@ const requiredString = z.string().min(1, {
 export const userFormSchema = z.object({
   key: requiredString,
   namePrefix: requiredString,
-  firstName: requiredString,
-  lastName: requiredString,
+  firstName: requiredString.trim(),
+  lastName: requiredString.trim(),
   dob: requiredString,
   nationality: requiredString,
-  citizenId: requiredString.min(13, {
-    message: "required",
-  }),
+  citizenId: requiredString
+    .min(13, {
+      message: "required",
+    })
+    .trim(),
   sex: requiredString,
   phoneNumber: requiredString
+    .trim()
     .refine(
       (value) =>
         (value.startsWith("0") && value.length === 10) ||
@@ -26,6 +29,6 @@ export const userFormSchema = z.object({
     )
     .transform((value) => (value.startsWith("0") ? value.substring(1) : value)),
   countryCode: requiredString,
-  passportNumber: z.string().optional(),
-  expectedSalary: requiredString,
+  passportNumber: z.string().trim().optional(),
+  expectedSalary: requiredString.trim(),
 });

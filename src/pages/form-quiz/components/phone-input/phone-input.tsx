@@ -90,7 +90,7 @@ export const PhoneInput: FC<Props> = (props) => {
       </Space.Compact>
       {(!!errors?.phoneNumber || !!errors?.countryCode) && (
         <div className="error-message">
-          {t(`form.mobile.errors.required`, "")}
+          {t(`form.phoneNumber.errors.required`, "")}
         </div>
       )}
     </div>

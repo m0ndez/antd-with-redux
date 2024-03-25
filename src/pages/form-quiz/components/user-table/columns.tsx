@@ -14,12 +14,12 @@ export const columns = (params: ColumnParams): TableColumnsType<UserData> => {
   return [
     {
       dataIndex: "firstName",
-      title: t("form.first_name.label"),
+      title: t("form.firstName.label"),
       sorter: (a, b) => a.firstName.localeCompare(b.firstName),
       render(_, record) {
         const { namePrefix, firstName, lastName } = record;
         return `${t(
-          `form.name_prefix.options.${namePrefix}`,
+          `form.namePrefix.options.${namePrefix}`,
           ""
         )} ${firstName} ${lastName}`;
       },
@@ -35,7 +35,7 @@ export const columns = (params: ColumnParams): TableColumnsType<UserData> => {
     {
       dataIndex: "phoneNumber",
       sorter: (a, b) => a.phoneNumber.localeCompare(b.phoneNumber),
-      title: t("form.mobile.label"),
+      title: t("form.phoneNumber.label"),
       render(_, record) {
         return `${record.countryCode}${record.phoneNumber}`;
       },

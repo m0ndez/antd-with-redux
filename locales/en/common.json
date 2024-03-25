@@ -18,7 +18,7 @@
   },
 
   "form": {
-    "name_prefix": {
+    "namePrefix": {
       "label": "Name Prefix",
       "placeholder": "Select Name Prefix",
       "options": {
@@ -30,14 +30,14 @@
         "required": "Please select name prefix"
       }
     },
-    "first_name": {
+    "firstName": {
       "label": "First Name",
       "placeholder": "Enter First Name",
       "errors": {
         "required": "Please enter first name"
       }
     },
-    "last_name": {
+    "lastName": {
       "label": "Last Name",
       "placeholder": "Enter Last Name",
       "errors": {
@@ -58,7 +58,7 @@
         "required": "Please select nationality"
       }
     },
-    "citizen_id": {
+    "citizenId": {
       "label": "Citizen ID",
       "placeholder": "Enter Citizen ID",
       "errors": {
@@ -76,18 +76,18 @@
         "required": "Please select sex"
       }
     },
-    "mobile": {
+    "phoneNumber": {
       "label": "Mobile",
       "placeholder": "Enter Mobile",
       "errors": {
         "required": "Please enter mobile"
       }
     },
-    "passport_number": {
+    "passportNumber": {
       "label": "Passport",
       "placeholder": "Enter Passport"
     },
-    "expected_salary": {
+    "expectedSalary": {
       "label": "Expected Salary",
       "placeholder": "Enter Expected Salary",
       "errors": {
@@ -102,7 +102,8 @@
     "success": "Success",
     "edit": "Edit success",
     "delete": "Delete success",
-    "error": "Error"
+    "error": "Error",
+    "delete_all_user": "Delete all user success"
   },
 
   "action": {

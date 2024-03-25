@@ -15,7 +15,7 @@
     }
   },
   "form": {
-    "name_prefix": {
+    "namePrefix": {
       "label": "คำนำหน้าชื่อ",
       "placeholder": "กรุณาเลือกคำนำหน้าชื่อ",
       "options": {
@@ -27,14 +27,14 @@
         "required": "กรุณาเลือกคำนำหน้าชื่อ"
       }
     },
-    "first_name": {
+    "firstName": {
       "label": "ชื่อจริง",
       "placeholder": "กรุณากรอกชื่อ",
       "errors": {
         "required": "กรุณากรอกชื่อ"
       }
     },
-    "last_name": {
+    "lastName": {
       "label": "นามสกุล",
       "placeholder": "กรุณากรอกนามสกุล",
       "errors": {
@@ -55,7 +55,7 @@
         "required": "กรุณาเลือกสัญชาติ"
       }
     },
-    "citizen_id": {
+    "citizenId": {
       "label": "เลขประจำตัวประชาชน",
       "placeholder": "กรุณากรอกเลขประจำตัวประชาชน",
       "errors": {
@@ -73,18 +73,18 @@
         "required": "กรุณาเลือกเพศ"
       }
     },
-    "mobile": {
+    "phoneNumber": {
       "label": "เบอร์โทรศัพท์มือถือ",
       "placeholder": "กรุณากรอกเบอร์โทรศัพท์มือถือ",
       "errors": {
         "required": "กรุณากรอกเบอร์โทรศัพท์มือถือ"
       }
     },
-    "passport_number": {
+    "passportNumber": {
       "label": "เลขที่หนังสือเดินทาง",
       "placeholder": "กรุณากรอกเลขที่หนังสือเดินทาง"
     },
-    "expected_salary": {
+    "expectedSalary": {
       "label": "เงินเดือนที่คาดหวัง",
       "placeholder": "กรุณากรอกเงินเดือนที่คาดหวัง",
       "errors": {
@@ -99,7 +99,8 @@
     "success": "ข้อมูลถูกส่งเรียบร้อยแล้ว",
     "edit": "ข้อมูลถูกแก้ไขเรียบร้อยแล้ว",
     "delete": "ข้อมูลถูกลบเรียบร้อยแล้ว",
-    "error": "เกิดข้อผิดพลาดในการส่งข้อมูล"
+    "error": "เกิดข้อผิดพลาดในการส่งข้อมูล",
+    "delete_all_user": "ลบข้อมูลทั้งหมดเรียบร้อยแล้ว"
   },
 
   "action": {

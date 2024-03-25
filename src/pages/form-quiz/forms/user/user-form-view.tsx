@@ -21,15 +21,15 @@ export const UserFormView: FC = () => {
   const prefixNameOptions = [
     {
       value: "mr",
-      label: t("form.name_prefix.options.mr"),
+      label: t("form.namePrefix.options.mr"),
     },
     {
       value: "mrs",
-      label: t("form.name_prefix.options.mrs"),
+      label: t("form.namePrefix.options.mrs"),
     },
     {
       value: "miss",
-      label: t("form.name_prefix.options.miss"),
+      label: t("form.namePrefix.options.miss"),
     },
   ];
 
@@ -67,14 +67,11 @@ export const UserFormView: FC = () => {
             }) => (
               <SelectInput
                 required
-                label={t("form.name_prefix.label")}
-                placeholder={t("form.name_prefix.placeholder")}
+                label={t("form.namePrefix.label")}
+                placeholder={t("form.namePrefix.placeholder")}
                 options={prefixNameOptions}
                 isError={invalid}
-                errorMessage={t(
-                  `form.name_prefix.errors.${error?.message}`,
-                  ""
-                )}
+                errorMessage={t(`form.namePrefix.errors.${error?.message}`, "")}
                 value={value === "" ? null : value}
                 {...field}
               />
@@ -87,10 +84,10 @@ export const UserFormView: FC = () => {
             render={({ field, fieldState: { invalid, error } }) => (
               <TextInput
                 required
-                label={t("form.first_name.label")}
-                placeholder={t("form.first_name.placeholder")}
+                label={t("form.firstName.label")}
+                placeholder={t("form.firstName.placeholder")}
                 isError={invalid}
-                errorMessage={t(`form.first_name.errors.${error?.message}`, "")}
+                errorMessage={t(`form.firstName.errors.${error?.message}`, "")}
                 {...field}
               />
             )}
@@ -102,10 +99,10 @@ export const UserFormView: FC = () => {
             render={({ field, fieldState: { invalid, error } }) => (
               <TextInput
                 required
-                label={t("form.last_name.label")}
-                placeholder={t("form.last_name.placeholder")}
+                label={t("form.lastName.label")}
+                placeholder={t("form.lastName.placeholder")}
                 isError={invalid}
-                errorMessage={t(`form.last_name.errors.${error?.message}`, "")}
+                errorMessage={t(`form.lastName.errors.${error?.message}`, "")}
                 {...field}
               />
             )}
@@ -167,18 +164,18 @@ export const UserFormView: FC = () => {
               fieldState: { invalid, error },
             }) => (
               <PatternFormat
-                format="#-####-#####-##-#"
+                format="#-####-#####-###"
                 customInput={TextInput}
                 getInputRef={ref}
                 required
-                label={t("form.citizen_id.label")}
-                placeholder={t("form.citizen_id.placeholder")}
+                label={t("form.citizenId.label")}
+                placeholder={t("form.citizenId.placeholder")}
                 onValueChange={({ value }) => {
                   onChange(value);
                 }}
                 isError={invalid}
                 errorMessage={
-                  t(`form.citizen_id.errors.${error?.message}`, "") as string
+                  t(`form.citizenId.errors.${error?.message}`, "") as string
                 }
                 {...field}
               />
@@ -206,8 +203,8 @@ export const UserFormView: FC = () => {
       <Row gutter={[16, 16]}>
         <Col span={24} md={10} lg={10}>
           <PhoneInput
-            label={t("form.mobile.label")}
-            placeHolder={t("form.mobile.placeholder")}
+            label={t("form.phoneNumber.label")}
+            placeHolder={t("form.phoneNumber.placeholder")}
             required
           />
         </Col>
@@ -218,8 +215,8 @@ export const UserFormView: FC = () => {
             name="passportNumber"
             render={({ field }) => (
               <TextInput
-                label={t("form.passport_number.label")}
-                placeholder={t("form.passport_number.placeholder")}
+                label={t("form.passportNumber.label")}
+                placeholder={t("form.passportNumber.placeholder")}
                 {...field}
               />
             )}
@@ -237,17 +234,17 @@ export const UserFormView: FC = () => {
               <NumericFormat
                 required
                 getInputRef={ref}
-                label={t("form.expected_salary.label")}
+                label={t("form.expectedSalary.label")}
                 customInput={TextInput}
                 thousandSeparator
                 maxLength={10}
                 allowNegative={false}
                 allowLeadingZeros={false}
-                placeholder={t("form.expected_salary.placeholder")}
+                placeholder={t("form.expectedSalary.placeholder")}
                 isError={invalid}
                 errorMessage={
                   t(
-                    `form.expected_salary.errors.${error?.message}`,
+                    `form.expectedSalary.errors.${error?.message}`,
                     ""
                   ) as string
                 }

@@ -51,18 +51,20 @@ function App() {
       </div>
 
       {activeSection === 0 && (
-        <Row gutter={[16, 16]} className="btn-container">
-          {quizList.map((quiz) => (
-            <Col span={24} md={12} key={quiz.name}>
-              <Button size="large" onClick={quiz.onClick}>
-                <Flex vertical gap="large">
-                  <Title level={4}>{quiz.name}</Title>
-                  <Text>{quiz.description}</Text>
-                </Flex>
-              </Button>
-            </Col>
-          ))}
-        </Row>
+        <div className="btn-container">
+          <Row gutter={[16, 16]} className="btn-row">
+            {quizList.map((quiz) => (
+              <Col span={24} md={12} key={quiz.name}>
+                <Button size="large" onClick={quiz.onClick}>
+                  <Flex vertical gap="large">
+                    <Title level={4}>{quiz.name}</Title>
+                    <Text>{quiz.description}</Text>
+                  </Flex>
+                </Button>
+              </Col>
+            ))}
+          </Row>
+        </div>
       )}
 
       {activeSection === 1 && <LayoutQuizPage />}

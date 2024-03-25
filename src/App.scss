@@ -1,17 +1,16 @@
 #root {
   .container {
+    min-height: calc(100dvh - 4rem);
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    height: calc(100dvh - 4rem);
     gap: 2rem;
   }
 
   .nav-container {
     display: flex;
-
     .nav-wrapper {
       margin-left: auto;
       display: flex;
@@ -25,16 +24,22 @@
   }
 
   .btn-container {
-    flex-grow: 1;
-    align-content: center;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    height: 100%;
+    .btn-row {
+      flex-grow: 1;
+      align-content: center;
 
-    .ant-btn {
-      text-align: left;
-      height: auto;
-      padding: 2rem;
-      border-radius: 0.275rem;
-      width: 100%;
-      height: 100%;
+      .ant-btn {
+        text-align: left;
+        height: auto;
+        padding: 2rem;
+        border-radius: 0.275rem;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
